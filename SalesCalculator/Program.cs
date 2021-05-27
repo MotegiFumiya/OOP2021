@@ -8,15 +8,21 @@ using System.Threading.Tasks;
 namespace SalesCalculator {
     class Program {
         static void Main(string[] args) {
-            //List<Sale> sales = ReadSales("Sales.csv");
+            SalesCounter sales = new SalesCounter(ReadSales("Sales.csv"));
+
+            //sales.GetPerStoreSaled();
+            Dictionary<string, int> amountPerStore = sales.GetPerStoreSaled();
+            foreach (KeyValuePair<string,int> obj in amountPerStore) {
+                Console.WriteLine("{0}{1}", obj.Key, obj.Value);
+            }
         }
 
         //List2-15
         //売上データを読み込み、Saleオブジェクトのリストを返す
-        static List<Sale>ReadSales(string filePath) {
+        static List<Sale> ReadSales(string filePath) {
             List<Sale> sales = new List<Sale>();
             string[] lines = File.ReadAllLines(filePath);
-            foreach(string line in lines) {
+            foreach (string line in lines) {
                 string[] items = line.Split(',');
                 Sale sale = new Sale {
                     ShopName = items[0],
@@ -24,7 +30,8 @@ namespace SalesCalculator {
                     Amount = int.Parse(items[2])
                 };
                 sales.Add(sale);
-            }return sales;
+            }
+            return sales;
         }
     }
 }
