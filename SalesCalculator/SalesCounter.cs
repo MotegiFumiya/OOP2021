@@ -15,9 +15,9 @@ namespace SalesCalculator {
             _sales = ReadSales(filePath);
         }
 
-        internal object GetPerStoreSales() {
-            throw new NotImplementedException();
-        }
+        //internal object GetPerStoreSales() {
+        //    throw new NotImplementedException();
+        //}
 
         //List2-15
         //売上データを読み込み、Saleオブジェクトのリストを返す

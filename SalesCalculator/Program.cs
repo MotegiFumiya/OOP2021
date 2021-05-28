@@ -12,7 +12,7 @@ namespace SalesCalculator {
             //sales.GetPerStoreSaled();
 
             var sales = new SalesCounter("sales.csv");
-            var amountPerStore = sales.GetPerStoreSales();
+            var amountPerStore = sales.GetPerStoreSaled();
             foreach (var obj in amountPerStore) {
                 Console.WriteLine("{0}{1}", obj.Key, obj.Value);
             }
