@@ -62,9 +62,11 @@ namespace Section01 {
 
         private static void Exercise2_5(List<string> names) {
             int count = 0;
-            foreach (var name in names) {
-                count+=name.Count(c => char.IsLower(c));
-            }
+
+            names.ForEach(n => count += n.Count(c => char.IsLower(c)));
+            //foreach (var name in names) {
+            //    count+=name.Count(c => char.IsLower(c));
+            //}
             Console.WriteLine(count);
         }
 
