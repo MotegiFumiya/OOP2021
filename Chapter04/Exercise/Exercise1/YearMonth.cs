@@ -12,12 +12,12 @@ namespace Exercise1 {
         //月
         public int Month { get; private set; }
 
-        public YearMonth(int year ,int month) {
+        public YearMonth(int year, int month) {
             Year = year;
             Month = month;
         }
 
-        //4.1.2
+        //4.1.2 21世紀ならtrue(プロパティ)
         public bool Is21Century {
             get {
                 return 2001 <= Year && Year <= 2100;
