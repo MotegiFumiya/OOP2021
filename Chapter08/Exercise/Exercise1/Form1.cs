@@ -39,17 +39,36 @@ namespace Exercise1 {
 
         private void Form1_Load(object sender, EventArgs e) {
             Timer tm = new Timer();
-            tm.Tick += Tm_Tick;
-            tm.Interval = 1000;
-            tm.Start();
+            tm.Tick += tmDisp_Tick;
+            //tm.Interval = 1000;
+            //tm.Start();
 
-            tssTimeLabel.Text = DateTime.Now.ToString();
+            //tssTimeLabel.Text = DateTime.Now.ToString();
 
+            time.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\.ff");//DateTime.Now.ToString()
+        }
+
+        private void tmDisp_Tick(object sender, EventArgs e) {
+            time.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\.ff") ;
+        }
+
+        private void start_Click(object sender, EventArgs e) {
+            sw.Start();
+            tmDisp.Start();
+        }
+
+        private void stop_Click(object sender, EventArgs e) {
+            sw.Stop();
+            tmDisp.Stop();
+        }
+
+        private void reset_Click(object sender, EventArgs e) {
+            sw.Reset();
             time.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\.ff");
         }
 
-        private void Tm_Tick(object sender, EventArgs e) {
-            tssTimeLabel.Text = DateTime.Now.ToString();
+        private void rap_Click(object sender, EventArgs e) {
+            //Iblapdisp.Items.Insert(0, sw.Elapsed.ToString(@"hh\:mm\:ss\.ff"));
         }
 
     }
