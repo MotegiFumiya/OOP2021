@@ -261,7 +261,6 @@ namespace CarReportSystem {
             this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPicture.TabIndex = 7;
             this.pbPicture.TabStop = false;
-            this.pbPicture.Click += new System.EventHandler(this.pbPicture_Click);
             // 
             // label7
             // 
@@ -320,6 +319,7 @@ namespace CarReportSystem {
             this.btSave.TabIndex = 8;
             this.btSave.Text = "保存...";
             this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // btOpen
             // 
@@ -329,6 +329,7 @@ namespace CarReportSystem {
             this.btOpen.TabIndex = 8;
             this.btOpen.Text = "開く...";
             this.btOpen.UseVisualStyleBackColor = true;
+            this.btOpen.Click += new System.EventHandler(this.btOpen_Click);
             // 
             // btEnd
             // 
