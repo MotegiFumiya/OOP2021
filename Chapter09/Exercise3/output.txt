@@ -1,0 +1,75 @@
+   1:using System;
+   2:using System.Collections.Generic;
+   3:using System.ComponentModel;
+   4:using System.Data;
+   5:using System.Drawing;
+   6:using System.Linq;
+   7:using System.Text;
+   8:using System.Threading.Tasks;
+   9:using System.Windows.Forms;
+  10:
+  11:namespace Exercise1 {
+  12:    public partial class Form1 : Form {
+  13:        public Form1() {
+  14:            InitializeComponent();
+  15:        }
+  16:
+  17:        private void btaction_Click(object sender, EventArgs e) {
+  18:            //var today = DateTime.Today;
+  19:            var today = new DateTime((int)nudYear.Value, (int)nudMonth.Value, (int)nudDay.Value);
+  20:            DayOfWeek dayOfWeek = today.DayOfWeek;
+  21:            //tbOutput.Text = "今日は" + (DayOfWeek)dayOfWeek + "です";
+  22:            string dow = "";
+  23:
+  24:            switch (dayOfWeek) {
+  25:                case DayOfWeek.Sunday:
+  26:                    dow = "日曜日";
+  27:                    break;
+  28:                case DayOfWeek.Monday:
+  29:                    dow = "月曜日";
+  30:                    break;
+  31:                case DayOfWeek.Tuesday:
+  32:                    dow = "火曜日";
+  33:                    break;
+  34:                case DayOfWeek.Wednesday:
+  35:                    dow = "水曜日";
+  36:                    break;
+  37:                case DayOfWeek.Thursday:
+  38:                    dow = "木曜日";
+  39:                    break;
+  40:                case DayOfWeek.Friday:
+  41:                    dow = "金曜日";
+  42:                    break;
+  43:                case DayOfWeek.Saturday:
+  44:                    dow = "土曜日";
+  45:                    break;
+  46:            }
+  47:            tbOutput.Text = dow + "です";
+  48:
+  49:            var d1 = (DateTime.Today);
+  50:            TimeSpan diff = d1.Date - today.Date;
+  51:            day.Text = diff.ToString();
+  52:
+  53:            var leap = DateTime.IsLeapYear((int)nudYear.Value);
+  54:            if (leap) {
+  55:                tbleapyear.Text="閏年です";
+  56:            } else {
+  57:                tbleapyear.Text = "閏年ではないです";
+  58:            }
+  59:
+  60:            var Today = DateTime.Today;
+  61:            var birthday = today;
+  62:
+  63:            ///Age.Text=Getage(DateTime.)
+  64:            //tbOutput.Text = DateTime.Today.DayOfYear.ToString();
+  65:        }
+  66:        public int Getage(DateTime birthday,DateTime targetday) {
+  67:         var age = targetday.Year - birthday.Year;
+  68:            if (targetday < birthday.AddYears(age)) {
+  69:                age--;
+  70:                Age.Text = age.ToString();
+  71:             }
+  72:            return age;
+  73:        }
+  74:    }
+  75:}
