@@ -9,16 +9,29 @@ namespace Section11 {
     class Program {
         static void Main(string[] args) {
 
-            var xdoc = XDocument.Load("novellists.xml");
-            
+            var novelists = ReadNovelists();
 
-            foreach(var xnovelist in xdoc.Elements()) {
-                var xname =xnovelist.Element("name");
-                var works = xnovelist.Elements("masterpieces")
-                                        .Elements("title")
-                                        .Select(x => x.Value);
-                Console.WriteLine("{0}{1}", xname.Value, string.Join(",",works));
+            foreach(var novelist in novelists) {
+                Console.WriteLine("{0}({1}-{2})", novelist.Name, 
+                    novelist.Birth.Year,novelist.Death.Year);
             }
+        }
+        //カスタムクラスのオブジェクトとして要素を取り出す
+        static public IEnumerable<Novelists> ReadNovelists() 
+            {
+            var xdoc = XDocument.Load("novelists.xml");
+            var novelists = xdoc.Root.Elements()
+                .Select(x => new Novelists{
+                    Name = (string)x.Element("name"),
+                    KanaName=(string)(x.Element("name").Attribute("kana")),
+                    Birth = (DateTime)x.Element("birth"),
+                    Death = (DateTime)x.Element("death"),
+                    Masterpieces=x.Element("masterpieces")
+                    .Elements("title")
+                    .Select(title=>title.Value)
+                    .ToArray()
+                });
+            return novelists.ToArray();
         }
     }
 }
