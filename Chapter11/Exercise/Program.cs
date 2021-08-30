@@ -7,9 +7,9 @@ using System.Xml.Linq;
 
 namespace Exercise {
     class Program {
-        private static string file;
-
+        //private static string file;
         static void Main(string[] args) {
+            var file = "Sample.xml";
             Exercise1_1(file);
             Console.WriteLine();
             Console.WriteLine("---------------");
@@ -59,13 +59,18 @@ namespace Exercise {
                     Teammembers = x.Element("teammembers").Value
                 })
                 .OrderByDescending(x => int.Parse(x.Teammembers));
+            foreach(var sport in sports) {
+                Console.WriteLine("{0} {1}", sport.Name);
+            }
         }
         
         private static void Exercise1_4(string file) {
             XDocument document = XDocument.Parse(file);
             var xdoc = XDocument.Load("Sample.xml");
 
+
             xdoc.Save("Sample.xml");
+            
         }
         
     }
