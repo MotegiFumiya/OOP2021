@@ -20,8 +20,14 @@ namespace Exercise {
 
             Exercise1_3(file);
             Console.WriteLine();
-            Console.WriteLine("----------------")
+            Console.WriteLine("----------------");
+
+            Exercise1_4(file);
+            Console.WriteLine();
+            Console.WriteLine("----------------");
         }
+
+        
 
         private static void Exercise1_1(string file) {
             var xdoc = XDocument.Load(file);
@@ -40,8 +46,7 @@ namespace Exercise {
                 .Select(x => new {
                     Firstplayed = x.Element("firstplayed").Value,
                     Name = x.Element("name").Attribute("kanji").Value
-                })
-                .OrderBy(x => int.Parse(x.Firstplayed));
+                }).OrderBy(x => int.Parse(x.Firstplayed));
             foreach(var sport in sports) {
                 Console.WriteLine("{0} {1}", sport.Name, sport.Firstplayed);
             }
@@ -54,6 +59,13 @@ namespace Exercise {
                     Teammembers = x.Element("teammembers").Value
                 })
                 .OrderByDescending(x => int.Parse(x.Teammembers));
+        }
+        
+        private static void Exercise1_4(string file) {
+            XDocument document = XDocument.Parse(file);
+            var xdoc = XDocument.Load("Sample.xml");
+
+            xdoc.Save("Sample.xml");
         }
         
     }
