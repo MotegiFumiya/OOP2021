@@ -65,11 +65,22 @@ namespace Exercise {
         }
         
         private static void Exercise1_4(string file) {
-            XDocument document = XDocument.Parse(file);
-            var xdoc = XDocument.Load("Sample.xml");
+            //XDocument document = XDocument.Parse(file);
+            //var xdoc = XDocument.Load("Sample.xml");
+            
+            var newfile = "sample.xml";
 
+            //追加先のxmlファイルを読み込む
+            var xdoc = XDocument.Load(file);
 
-            xdoc.Save("Sample.xml");
+            //追加するデータ
+            var element = new XElement("ballsport",
+                new XElement("name", "サッカー", new XAttribute("kanji", "蹴球")),
+                new XElement("teammembers", "11"),
+                new XElement("firtsplayed", "1863"));
+
+            xdoc.Root.Add(element);
+            xdoc.Save(newfile);
             
         }
         
