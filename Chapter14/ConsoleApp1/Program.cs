@@ -10,14 +10,46 @@ using System.Xml.Linq;
 
 namespace Section04 {
     class Program {
+        
+        Dictionary<string, int> weahter = new Dictionary<string, int>() {
+            {"宇都宮", 4110},
+            { "前橋",4210},
+            { "埼玉",4310},
+            { "東京",4410}
+        };
         static void Main(string[] args) {
             new Program();
         }
-
         //コンストラクタ
         public Program() {
-            //DownloadString();
-            //DownloadFileAsync();
+
+            Console.WriteLine("yahoo!週間天気予報");
+            Console.WriteLine();
+            Console.WriteLine("地域コードを入力");
+            int num = 1;
+            /*foreach (int i = 0; i < weahter.Count; i++) {
+                Console.WriteLine("{0}:{1}", i + 1, weahter);
+            }*/
+            foreach(KeyValuePair<string,int>pair in weahter) {
+                Console.WriteLine("{0}:{1}", num ++ , pair.Key);
+            }
+            /*Console.WriteLine("1:宇都宮");
+            Console.WriteLine("2:前橋");
+            Console.WriteLine("3:埼玉");
+            Console.WriteLine("4:東京");*/
+            Console.WriteLine("9:その他");
+            Console.WriteLine();
+
+            Console.WriteLine(">");
+
+            //文字列として入力した数字取り込む
+            var wc = Console.ReadLine();
+
+            int wet = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("{0}番は", wc);
+            //if(weahter==)
+
             var results = GetWeatherReportFromYahoo(4610);
             foreach(var s in results) {
                 Console.WriteLine(s);
@@ -25,48 +57,10 @@ namespace Section04 {
             Console.ReadLine();
         }
 
-        //リスト14.15
-        public void DownloadString() {
-
-            var wc = new WebClient();
-            wc.Encoding = Encoding.UTF8;
-            var html = wc.DownloadString("https://yahoo.co.jp/");
-            Console.WriteLine(html);
-
-        }
-        //リスト14.17
-        private void DownloadFileAsync() {
-            var wc = new WebClient();
-            var url = new Uri(@"C:\temp\25129_SwordArt_Online_PC.jpg");
-            var filename = @"C:\temp\example.zip";
-            wc.DownloadProgressChanged += wc_DownloadProgressChanged;
-            wc.DownloadFileCompleted += wc_DownloadFileCompleted;
-            wc.DownloadFileAsync(url, filename);
-            Console.ReadLine();//アプリケーションが終了しないようにする
-        }
-
-        static void wc_DownloadProgressChanged(object sender,
-                            DownloadProgressChangedEventArgs e) {
-            Console.WriteLine("{0}% {1}/{2}", e.ProgressPercentage,
-                              e.BytesReceived, e.TotalBytesToReceive);
-        }
-
-        static void wc_DownloadFileCompleted(object sender,
-                            System.ComponentModel.AsyncCompletedEventArgs e) {
-            Console.WriteLine("ダウンロード完了");
-        }
-
-        //リスト14.18(ストリームとしてダウンロード)
-        public void OpenReadSample() {
-            var wc = new WebClient();
-            using (var stream = wc.OpenRead("https://yahoo.co.jp/"))
-            using (var sr = new StreamReader(stream, Encoding.UTF8)) {
-                string html = sr.ReadToEnd();
-                Console.WriteLine(html);
-                                                                    }    
-                                        }
-
-        private static IEnumerable<string> GetWeatherReportFromYahoo(int cityCode) {
+        
+        //リスト14.19()
+        private static IEnumerable<string> GetWeatherReportFromYahoo
+            (int cityCode) {
             using (var wc = new WebClient()) {
                 wc.Headers.Add("Content-type", "charset=UTF-8");
                 var uriString = string.Format(
@@ -77,7 +71,7 @@ namespace Section04 {
                 XDocument xdoc = XDocument.Load(stream);
                 var nodes = xdoc.Root.Descendants("title");
                 foreach (var node in nodes) {
-                    string s = Regex.Replace(node.Value, "【|】", "");
+                    string s = Regex.Replace(node.Value, "【|】| - Yahoo!天気・災害", "");
                     yield return s;
                 }
             }
