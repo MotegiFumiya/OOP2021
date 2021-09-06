@@ -12,11 +12,12 @@ namespace Section04 {
     class Program {
         
         Dictionary<string, int> weahter = new Dictionary<string, int>() {
-            {"宇都宮", 4110},
-            { "前橋",4210},
-            { "埼玉",4310},
-            { "東京",4410}
+            {"宇都宮", 4110},{ "前橋",4210},{ "埼玉",4310},{ "東京",4410}
         };
+
+        //コードを保存する
+        List<int> cityCode = new List<int>();
+
         static void Main(string[] args) {
             new Program();
         }
@@ -27,16 +28,12 @@ namespace Section04 {
             Console.WriteLine();
             Console.WriteLine("地域コードを入力");
             int num = 1;
-            /*foreach (int i = 0; i < weahter.Count; i++) {
-                Console.WriteLine("{0}:{1}", i + 1, weahter);
-            }*/
+            
             foreach(KeyValuePair<string,int>pair in weahter) {
                 Console.WriteLine("{0}:{1}", num ++ , pair.Key);
+                cityCode.Add(pair.Value);//コードをリストへ保存
             }
-            /*Console.WriteLine("1:宇都宮");
-            Console.WriteLine("2:前橋");
-            Console.WriteLine("3:埼玉");
-            Console.WriteLine("4:東京");*/
+            
             Console.WriteLine("9:その他");
             Console.WriteLine();
 
@@ -44,16 +41,30 @@ namespace Section04 {
 
             //文字列として入力した数字取り込む
             var wc = Console.ReadLine();
+            int pos = int.Parse(wc);
 
-            int wet = int.Parse(Console.ReadLine());
+            
+            int code;
+            if(pos !=9) {
+                code = cityCode[pos - 1];
+            } 
+            else 
+            {
+                //その他の場合
+                Console.Write("都市コードを入力");
+               code = int.Parse(Console.ReadLine());
+            }
+            var results = GetWeatherReportFromYahoo(code);
 
-            Console.WriteLine("{0}番は", wc);
+            //int wet = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("{0}番は", wc);
             //if(weahter==)
-
-            var results = GetWeatherReportFromYahoo(4610);
             foreach(var s in results) {
                 Console.WriteLine(s);
             }
+
+            
             Console.ReadLine();
         }
 
