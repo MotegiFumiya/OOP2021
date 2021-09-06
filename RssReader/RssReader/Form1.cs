@@ -17,10 +17,10 @@ namespace RssReader {
 
         public Form1() {
             InitializeComponent();
-            SetRssTitle();
+            
         }
 
-        private void SetRssTitle() {
+        private void SetRssTitle(TextBox tbUrl) {
 
         }
 
@@ -39,6 +39,8 @@ namespace RssReader {
                 XDocument xdoc = XDocument.Load(stream);
                 var nodes = xdoc.Root.Descendants("title");
 
+                lbTitles.Items.Add(nodes);
+
                 //foreach (var node in nodes) {
                 //    //string s = Regex.Replace(node.Value, "【|】| - Yahoo!天気・災害", "");
                 //    //yield return s;
@@ -47,7 +49,14 @@ namespace RssReader {
         }
 
         private void btRead_Click(object sender, EventArgs e) {
-            lbTitles.Items.Add("http://rss.weather.yahoo.co.jp/rss/days/{0}.xml");
+            //XDocument xdoc = XDocument.Load(stream);
+            //var nodes = xdoc.Root.Descendants("title");
+
+            SetRssTitle(tbUrl.Text);
+
+            //lbTitles.Items.Add("http://rss.weather.yahoo.co.jp/rss/days/{0}.xml");
+
+            
         }
 
         private void lbTitles_SelectedIndexChanged(object sender, EventArgs e) {
