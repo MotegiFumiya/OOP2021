@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // 制御されます。アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更します。
-[assembly: AssemblyTitle("RssReader")]
+[assembly: AssemblyTitle("RssReader2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RssReader")]
+[assembly: AssemblyProduct("RssReader2")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,11 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // このプロジェクトが COM に公開される場合、次の GUID が typelib の ID になります
-<<<<<<< HEAD
-[assembly: Guid("707958a9-5616-476b-9550-42a97368cd6e")]
-=======
-[assembly: Guid("8ef7fd7e-c645-42c5-83f5-5065b39eba28")]
->>>>>>> e451921fd6437013de1e3588e109540bee0a278f
+[assembly: Guid("5b6c2403-d390-478f-83b6-a8a2d846d0ba")]
 
 // アセンブリのバージョン情報は、以下の 4 つの値で構成されています:
 //

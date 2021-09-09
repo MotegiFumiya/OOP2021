@@ -4,14 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-<<<<<<< HEAD
-    <ProjectGuid>{707958A9-5616-476B-9550-42A97368CD6E}</ProjectGuid>
-=======
-    <ProjectGuid>{8EF7FD7E-C645-42C5-83F5-5065B39EBA28}</ProjectGuid>
->>>>>>> e451921fd6437013de1e3588e109540bee0a278f
+    <ProjectGuid>{5B6C2403-D390-478F-83B6-A8A2D846D0BA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>RssReader</RootNamespace>
-    <AssemblyName>RssReader</AssemblyName>
+    <RootNamespace>RssReader2</RootNamespace>
+    <AssemblyName>RssReader2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,29 +48,12 @@
   <ItemGroup>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
-<<<<<<< HEAD
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-=======
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Program.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
->>>>>>> e451921fd6437013de1e3588e109540bee0a278f
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
