@@ -31,23 +31,28 @@ namespace SendMail {
             this.tbTitle = new System.Windows.Forms.TextBox();
             this.tbMessage = new System.Windows.Forms.TextBox();
             this.btSend = new System.Windows.Forms.Button();
+            this.tbCc = new System.Windows.Forms.TextBox();
+            this.tbBcc = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btConfig = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Location = new System.Drawing.Point(58, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 24);
+            this.label1.Size = new System.Drawing.Size(48, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "送信先：";
+            this.label1.Text = "To：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(36, 59);
+            this.label2.Location = new System.Drawing.Point(36, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 24);
             this.label2.TabIndex = 0;
@@ -57,7 +62,7 @@ namespace SendMail {
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(36, 97);
+            this.label3.Location = new System.Drawing.Point(36, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 24);
             this.label3.TabIndex = 0;
@@ -74,7 +79,7 @@ namespace SendMail {
             // tbTitle
             // 
             this.tbTitle.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbTitle.Location = new System.Drawing.Point(112, 59);
+            this.tbTitle.Location = new System.Drawing.Point(112, 134);
             this.tbTitle.Name = "tbTitle";
             this.tbTitle.Size = new System.Drawing.Size(480, 31);
             this.tbTitle.TabIndex = 1;
@@ -82,7 +87,7 @@ namespace SendMail {
             // tbMessage
             // 
             this.tbMessage.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbMessage.Location = new System.Drawing.Point(112, 97);
+            this.tbMessage.Location = new System.Drawing.Point(112, 171);
             this.tbMessage.Multiline = true;
             this.tbMessage.Name = "tbMessage";
             this.tbMessage.Size = new System.Drawing.Size(480, 229);
@@ -91,7 +96,7 @@ namespace SendMail {
             // btSend
             // 
             this.btSend.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btSend.Location = new System.Drawing.Point(499, 332);
+            this.btSend.Location = new System.Drawing.Point(499, 406);
             this.btSend.Name = "btSend";
             this.btSend.Size = new System.Drawing.Size(93, 39);
             this.btSend.TabIndex = 2;
@@ -99,17 +104,68 @@ namespace SendMail {
             this.btSend.UseVisualStyleBackColor = true;
             this.btSend.Click += new System.EventHandler(this.btSend_Click);
             // 
+            // tbCc
+            // 
+            this.tbCc.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbCc.Location = new System.Drawing.Point(112, 59);
+            this.tbCc.Name = "tbCc";
+            this.tbCc.Size = new System.Drawing.Size(480, 31);
+            this.tbCc.TabIndex = 1;
+            // 
+            // tbBcc
+            // 
+            this.tbBcc.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbBcc.Location = new System.Drawing.Point(112, 96);
+            this.tbBcc.Name = "tbBcc";
+            this.tbBcc.Size = new System.Drawing.Size(480, 31);
+            this.tbBcc.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label4.Location = new System.Drawing.Point(45, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 24);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Bcc：";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label5.Location = new System.Drawing.Point(56, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 24);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Cc：";
+            // 
+            // btConfig
+            // 
+            this.btConfig.Location = new System.Drawing.Point(112, 411);
+            this.btConfig.Name = "btConfig";
+            this.btConfig.Size = new System.Drawing.Size(76, 39);
+            this.btConfig.TabIndex = 3;
+            this.btConfig.Text = "設定";
+            this.btConfig.UseVisualStyleBackColor = true;
+            this.btConfig.Click += new System.EventHandler(this.btConfig_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 450);
+            this.ClientSize = new System.Drawing.Size(626, 529);
+            this.Controls.Add(this.btConfig);
             this.Controls.Add(this.btSend);
             this.Controls.Add(this.tbMessage);
             this.Controls.Add(this.tbTitle);
+            this.Controls.Add(this.tbBcc);
+            this.Controls.Add(this.tbCc);
             this.Controls.Add(this.tbTo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "メール送信アプリ";
@@ -127,6 +183,11 @@ namespace SendMail {
         private System.Windows.Forms.TextBox tbTitle;
         private System.Windows.Forms.TextBox tbMessage;
         private System.Windows.Forms.Button btSend;
+        private System.Windows.Forms.TextBox tbCc;
+        private System.Windows.Forms.TextBox tbBcc;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btConfig;
     }
 }
 
