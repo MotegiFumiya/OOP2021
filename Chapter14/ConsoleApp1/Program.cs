@@ -50,7 +50,7 @@ namespace Section04 {
             Console.WriteLine("{0}番は", wc);
             //if(weahter==)
 
-            var results = GetWeatherReportFromYahoo(4610);
+            var results = GetWeatherReportFromYahoo(4210);
             foreach(var s in results) {
                 Console.WriteLine(s);
             }
