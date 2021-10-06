@@ -17,6 +17,9 @@ namespace SendMail
         public string Pass { get; set; }    //パスワード
         public bool Ssl { get; set; }   //SSL
         //論理的思考
+        
+
+
         //コンストラクタ
         private Settings(){}
 

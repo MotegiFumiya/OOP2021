@@ -32,6 +32,10 @@ namespace SendMail
         private void btOk_Click(object sender, EventArgs e)
         {
             SettingRegist();
+
+            System.Xml.Serialization.XmlSerializer serializer=
+                new System.Xml.Serialization.XmlSerializer(typeof())
+
             this.Close();
         }
 
@@ -54,6 +58,10 @@ namespace SendMail
         private void btCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btxmlsave_Click(object sender, EventArgs e) {
+
         }
     }
 }
