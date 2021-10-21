@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 
+<<<<<<< HEAD
 namespace SendMail.Properties {
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
@@ -18,6 +19,21 @@ namespace SendMail.Properties {
 
         public static Settings Default {
             get {
+=======
+namespace SendMail.Properties
+{
+    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
+        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+
+        public static Settings Default
+        {
+            get
+            {
+>>>>>>> f1e43fdaa7b9a4134d520a72f166d344a203f3be
                 return defaultInstance;
             }
         }

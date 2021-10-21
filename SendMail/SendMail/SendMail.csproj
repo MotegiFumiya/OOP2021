@@ -4,7 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+<<<<<<< HEAD
     <ProjectGuid>{FA74DC63-223B-4DF4-B772-E147C90CEA87}</ProjectGuid>
+=======
+    <ProjectGuid>{B9D5BF5A-502F-4DAB-BE09-EBED81044326}</ProjectGuid>
+>>>>>>> f1e43fdaa7b9a4134d520a72f166d344a203f3be
     <OutputType>WinExe</OutputType>
     <RootNamespace>SendMail</RootNamespace>
     <AssemblyName>SendMail</AssemblyName>
@@ -46,6 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Compile Include="ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigForm.Designer.cs">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </Compile>
+>>>>>>> f1e43fdaa7b9a4134d520a72f166d344a203f3be
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +67,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Settings.cs" />
+    <Compile Include="settingxml.cs" />
+    <EmbeddedResource Include="ConfigForm.resx">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> f1e43fdaa7b9a4134d520a72f166d344a203f3be
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
