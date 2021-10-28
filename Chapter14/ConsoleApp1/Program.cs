@@ -60,11 +60,10 @@ namespace Section04 {
 
             //Console.WriteLine("{0}番は", wc);
             //if(weahter==)
-<<<<<<< HEAD
 
-            var results = GetWeatherReportFromYahoo(4210);
-=======
->>>>>>> f1e43fdaa7b9a4134d520a72f166d344a203f3be
+          //  var results = GetWeatherReportFromYahoo(4210);
+
+
             foreach(var s in results) {
                 Console.WriteLine(s);
             }

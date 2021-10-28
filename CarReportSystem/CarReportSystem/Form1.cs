@@ -178,9 +178,9 @@ namespace CarReportSystem {
                 setCbCarName(item.CarName);
             }
 
-            private void frMain_Load(object sender,EventArgs e) {
-                dgvData.Columns[5].Visible = false;
-            }
+            //private void frMain_Load(object sender,EventArgs e) {
+            //    dgvData.Columns[5].Visible = false;
+            //}
 
         }
     }
