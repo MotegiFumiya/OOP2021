@@ -46,6 +46,7 @@ namespace CarReportSystem {
             this.Report = report;
             this.Picture = picture;
         }
+
     }
 
 

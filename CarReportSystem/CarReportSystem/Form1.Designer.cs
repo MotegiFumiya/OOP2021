@@ -43,12 +43,9 @@ namespace CarReportSystem {
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btDataAdd = new System.Windows.Forms.Button();
             this.pbPicture = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btPictureOpen = new System.Windows.Forms.Button();
-            this.btDataCollect = new System.Windows.Forms.Button();
-            this.btDataDelete = new System.Windows.Forms.Button();
             this.btPictureDelete = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
             this.btConnect = new System.Windows.Forms.Button();
@@ -255,21 +252,11 @@ namespace CarReportSystem {
             this.label6.TabIndex = 5;
             this.label6.Text = "記事一覧：";
             // 
-            // btDataAdd
-            // 
-            this.btDataAdd.Location = new System.Drawing.Point(455, 351);
-            this.btDataAdd.Name = "btDataAdd";
-            this.btDataAdd.Size = new System.Drawing.Size(80, 31);
-            this.btDataAdd.TabIndex = 6;
-            this.btDataAdd.Text = "追加";
-            this.btDataAdd.UseVisualStyleBackColor = true;
-            this.btDataAdd.Click += new System.EventHandler(this.btDataAdd_Click);
-            // 
             // pbPicture
             // 
             this.pbPicture.BackColor = System.Drawing.SystemColors.Control;
             this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPicture.Location = new System.Drawing.Point(455, 73);
+            this.pbPicture.Location = new System.Drawing.Point(455, 112);
             this.pbPicture.Name = "pbPicture";
             this.pbPicture.Size = new System.Drawing.Size(270, 270);
             this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -279,7 +266,7 @@ namespace CarReportSystem {
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(453, 47);
+            this.label7.Location = new System.Drawing.Point(450, 90);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 5;
@@ -287,7 +274,7 @@ namespace CarReportSystem {
             // 
             // btPictureOpen
             // 
-            this.btPictureOpen.Location = new System.Drawing.Point(503, 32);
+            this.btPictureOpen.Location = new System.Drawing.Point(500, 75);
             this.btPictureOpen.Name = "btPictureOpen";
             this.btPictureOpen.Size = new System.Drawing.Size(108, 31);
             this.btPictureOpen.TabIndex = 6;
@@ -295,29 +282,9 @@ namespace CarReportSystem {
             this.btPictureOpen.UseVisualStyleBackColor = true;
             this.btPictureOpen.Click += new System.EventHandler(this.btPictureOpen_Click);
             // 
-            // btDataCollect
-            // 
-            this.btDataCollect.Location = new System.Drawing.Point(550, 351);
-            this.btDataCollect.Name = "btDataCollect";
-            this.btDataCollect.Size = new System.Drawing.Size(80, 31);
-            this.btDataCollect.TabIndex = 6;
-            this.btDataCollect.Text = "修正";
-            this.btDataCollect.UseVisualStyleBackColor = true;
-            this.btDataCollect.Click += new System.EventHandler(this.btDataCollect_Click);
-            // 
-            // btDataDelete
-            // 
-            this.btDataDelete.Location = new System.Drawing.Point(645, 351);
-            this.btDataDelete.Name = "btDataDelete";
-            this.btDataDelete.Size = new System.Drawing.Size(80, 31);
-            this.btDataDelete.TabIndex = 6;
-            this.btDataDelete.Text = "削除";
-            this.btDataDelete.UseVisualStyleBackColor = true;
-            this.btDataDelete.Click += new System.EventHandler(this.btDataDelete_Click);
-            // 
             // btPictureDelete
             // 
-            this.btPictureDelete.Location = new System.Drawing.Point(617, 32);
+            this.btPictureDelete.Location = new System.Drawing.Point(614, 75);
             this.btPictureDelete.Name = "btPictureDelete";
             this.btPictureDelete.Size = new System.Drawing.Size(108, 31);
             this.btPictureDelete.TabIndex = 6;
@@ -333,7 +300,7 @@ namespace CarReportSystem {
             this.btSave.TabIndex = 8;
             this.btSave.Text = "更新";
             this.btSave.UseVisualStyleBackColor = true;
-            this.btSave.Click += new System.EventHandler(this.btSave_Click);
+            this.btSave.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // btConnect
             // 
@@ -521,11 +488,13 @@ namespace CarReportSystem {
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewImageColumn1});
             this.carReportDataGridView.DataSource = this.carReportBindingSource;
-            this.carReportDataGridView.Location = new System.Drawing.Point(104, 388);
+            this.carReportDataGridView.Location = new System.Drawing.Point(97, 389);
             this.carReportDataGridView.Name = "carReportDataGridView";
             this.carReportDataGridView.RowTemplate.Height = 21;
             this.carReportDataGridView.Size = new System.Drawing.Size(629, 220);
             this.carReportDataGridView.TabIndex = 22;
+            this.carReportDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.carReportDataGridView_DataError);
+            this.carReportDataGridView.SelectionChanged += new System.EventHandler(this.carReportDataGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -574,7 +543,7 @@ namespace CarReportSystem {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 690);
+            this.ClientSize = new System.Drawing.Size(746, 624);
             this.Controls.Add(this.carReportDataGridView);
             this.Controls.Add(this.carReportBindingNavigator);
             this.Controls.Add(this.btConnect);
@@ -583,9 +552,6 @@ namespace CarReportSystem {
             this.Controls.Add(this.pbPicture);
             this.Controls.Add(this.btPictureDelete);
             this.Controls.Add(this.btPictureOpen);
-            this.Controls.Add(this.btDataDelete);
-            this.Controls.Add(this.btDataCollect);
-            this.Controls.Add(this.btDataAdd);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -634,12 +600,9 @@ namespace CarReportSystem {
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btDataAdd;
         private System.Windows.Forms.PictureBox pbPicture;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btPictureOpen;
-        private System.Windows.Forms.Button btDataCollect;
-        private System.Windows.Forms.Button btDataDelete;
         private System.Windows.Forms.Button btPictureDelete;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btConnect;
