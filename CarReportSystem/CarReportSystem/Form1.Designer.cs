@@ -258,7 +258,7 @@ namespace CarReportSystem {
             this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbPicture.Location = new System.Drawing.Point(455, 112);
             this.pbPicture.Name = "pbPicture";
-            this.pbPicture.Size = new System.Drawing.Size(270, 270);
+            this.pbPicture.Size = new System.Drawing.Size(285, 270);
             this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPicture.TabIndex = 7;
             this.pbPicture.TabStop = false;
@@ -376,7 +376,7 @@ namespace CarReportSystem {
             this.carReportBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.carReportBindingNavigator.Name = "carReportBindingNavigator";
             this.carReportBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.carReportBindingNavigator.Size = new System.Drawing.Size(746, 25);
+            this.carReportBindingNavigator.Size = new System.Drawing.Size(756, 25);
             this.carReportBindingNavigator.TabIndex = 9;
             this.carReportBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -491,7 +491,7 @@ namespace CarReportSystem {
             this.carReportDataGridView.Location = new System.Drawing.Point(97, 389);
             this.carReportDataGridView.Name = "carReportDataGridView";
             this.carReportDataGridView.RowTemplate.Height = 21;
-            this.carReportDataGridView.Size = new System.Drawing.Size(629, 220);
+            this.carReportDataGridView.Size = new System.Drawing.Size(643, 220);
             this.carReportDataGridView.TabIndex = 22;
             this.carReportDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.carReportDataGridView_DataError);
             this.carReportDataGridView.SelectionChanged += new System.EventHandler(this.carReportDataGridView_SelectionChanged);
@@ -543,7 +543,7 @@ namespace CarReportSystem {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 624);
+            this.ClientSize = new System.Drawing.Size(756, 624);
             this.Controls.Add(this.carReportDataGridView);
             this.Controls.Add(this.carReportBindingNavigator);
             this.Controls.Add(this.btConnect);

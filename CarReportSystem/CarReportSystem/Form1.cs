@@ -50,6 +50,7 @@ namespace CarReportSystem {
 
             setCbAuther(cbAuther.Text);
             setCbCarName(cbCarname.Text);
+                        
         }
         //選択されているメーカーの列挙型を返す
         private CarReport.MakerGroup selectedGroup() {
@@ -66,6 +67,15 @@ namespace CarReportSystem {
         private void setCbAuther(string auther) {
             if (!cbAuther.Items.Contains(auther)) {
                 cbAuther.Items.Add(auther);
+                //                if (carReportDataGridView.Rows[3] == null) {
+                //                    for(int i = 0; i < carReportDataGridView.RowCount; i++) {                     
+                //                        setCbAuther(carReportDataGridView.Rows[i].Cells[3].Value.ToString());
+                //}
+                //                }
+                for (int i = 0; i < carReportDataGridView.RowCount; i++) {
+                    setCbAuther(carReportDataGridView.Rows[i].Cells[2].Value.ToString());
+                    setCbCarName(carReportDataGridView.Rows[i].Cells[3].Value.ToString());
+                }
             }
         }
         //コンボボックスに車名をセットする
@@ -122,6 +132,7 @@ namespace CarReportSystem {
         private void btDataCollect_Click(object sender, EventArgs e) {
 
         }
+
         //更新ボタンイベント管理
         private void btUpdate_Click(object sender, EventArgs e) 
             {
@@ -137,16 +148,12 @@ namespace CarReportSystem {
                 this.Validate();
                 this.carReportBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.infosys202134DataSet);
-
             }
         }
+
         private void btConnect_Click(object sender, EventArgs e) {
             // TODO: このコード行はデータを 'infosys202134DataSet.CarReport' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.carReportTableAdapter.Fill(this.infosys202134DataSet.CarReport);            
-            if (carReportDataGridView.CurrentRow != null) {
-                cbAuther.Text = null;
-            }
-
         }
 
         private void carReportBindingNavigatorSaveItem_Click
@@ -160,7 +167,13 @@ namespace CarReportSystem {
         private void fmMain_Load(object sender, EventArgs e) {
             // TODO: このコード行はデータを 'infosys202134DataSet.CarReport' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.carReportTableAdapter.Fill(this.infosys202134DataSet.CarReport);
-
+            carReportDataGridView.Columns[0].Visible = false;
+            carReportDataGridView.Columns[1].HeaderText = "日付";
+            carReportDataGridView.Columns[2].HeaderText = "記録者";
+            carReportDataGridView.Columns[3].HeaderText = "メーカー";
+            carReportDataGridView.Columns[4].HeaderText = "車名";
+            carReportDataGridView.Columns[5].HeaderText = "レポート";
+            carReportDataGridView.Columns[6].Visible = false;
         }
 
         private void carReportDataGridView_SelectionChanged(object sender, EventArgs e) {
@@ -209,6 +222,8 @@ namespace CarReportSystem {
             (object sender, DataGridViewDataErrorEventArgs e) {
 
         }
+
+       
     }
 }
 
