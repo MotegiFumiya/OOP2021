@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace NumberGame {
     public class MainWindowsViewModel {
-        private string text;
-
-        public 
-    }
+  }
 }

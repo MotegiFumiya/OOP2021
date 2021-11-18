@@ -5,42 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NumberGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="678.953">
+        x:Name="MainForm"
+        Title="MainForm" Height="450" Width="679">
 
-    <Grid>
-        <Button Content="1" HorizontalAlignment="Left" Margin="100,30,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="2" HorizontalAlignment="Left" Margin="200,30,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="3" HorizontalAlignment="Left" Margin="300,30,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="4" HorizontalAlignment="Left" Margin="400,30,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="5" HorizontalAlignment="Left" Margin="500,30,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
 
-        <Button Content="6" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="7" HorizontalAlignment="Left" Margin="200,100,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="8" HorizontalAlignment="Left" Margin="300,100,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="9" HorizontalAlignment="Left" Margin="400,100,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="10" HorizontalAlignment="Left" Margin="500,100,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
+    <StackPanel>
+        <Grid x:Name="grid"/>
+        <TextBlock x:Name="textDisp" Height ="30" FontSize ="15"/>
 
-        <Button Content="11" HorizontalAlignment="Left" Margin="100,170,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="12" HorizontalAlignment="Left" Margin="200,170,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="13" HorizontalAlignment="Left" Margin="300,170,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="14" HorizontalAlignment="Left" Margin="400,170,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="15" HorizontalAlignment="Left" Margin="500,170,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
+       </StackPanel>
 
-        <Button Content="16" HorizontalAlignment="Left" Margin="100,240,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="17" HorizontalAlignment="Left" Margin="200,240,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="18" HorizontalAlignment="Left" Margin="300,240,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="19" HorizontalAlignment="Left" Margin="400,240,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="20" HorizontalAlignment="Left" Margin="500,240,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-
-        <Button Content="21" HorizontalAlignment="Left" Margin="100,310,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="22" HorizontalAlignment="Left" Margin="200,310,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        
-        <Button Content="23" HorizontalAlignment="Left" Margin="300,310,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        
-        <Button Content="24" HorizontalAlignment="Left" Margin="400,310,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="25" HorizontalAlignment="Left" Margin="500,310,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="40,378,0,0" TextWrapping="Wrap" Text="{Binding }" VerticalAlignment="Top" Width="600"/>
-
-    </Grid>
 </Window>

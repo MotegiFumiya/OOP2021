@@ -18,8 +18,57 @@ namespace NumberGame {
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
     public partial class MainWindow : Window {
+
+        private Random random = new Random();
+        private int answerNum;
+        private const int Rows = 5;
+        private const int Columns = 5;
+
+        private SolidColorBrush selectedButtonColor = new SolidColorBrush(Colors.Yellow);
+        private SolidColorBrush hitButtonColor = new SolidColorBrush(Colors.Red);
+        private object MainForm;
+
         public MainWindow() {
             InitializeComponent();
         }
+
+        private void MainDisp_Loaded(object sender,RoutedEventArgs e) {
+            List<Button> buttons = new List<Button>();
+            
+            answerNum = random.Next(Rows * Columns) + 1;
+
+
+            for(int i=0;i<Rows;i++) {
+                grid.RowDefinitions.Add(new RowDefinition());
+            }
+
+            for (int i=0;i<Columns;i++) {
+                grid.ColumnDefinitions.Add(new ColumnDefinition());
+            }
+            
+            //ボタン
+            for(int i = 0; i < Rows; i++) {
+                for(int j = 0; j < Columns; j++) {
+                    var bt = new Button();
+                    bt.Width = MainForm / Columns;
+                    bt.Height = MainForm.Height / Rows ;
+                    bt.Content = j+1;
+                    bt.FontSize = 20;
+                    bt.Click += Bt_Click;
+                    Grid.SetRow(bt, i);
+                    Grid.SetColumn(bt,j);
+                    //grid.Children.Add(bt);
+                    buttons.Add(bt);
+                }
+            }
+            buttons.ForEach(bt => grid.Children.Add(bt));
+
+        }
+
+        private void Bt_Click(object sender,RoutedEventArgs e) {
+            Button selectedButton = (Button)sender;
+            int num =(int)selectedButton.Content;
+        }
+
     }
 }
