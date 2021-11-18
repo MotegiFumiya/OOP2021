@@ -61,7 +61,7 @@ namespace AddressBook
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            this.personTableAdapter.
+           // this.personTableAdapter.
         }
     }
 }

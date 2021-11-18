@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NumberGame"
         mc:Ignorable="d"
-        x:Name="MainForm"
-        Title="MainForm" Height="450" Width="679">
+        x:Name="MainForm" Height="450" Width="679"
+        Title="MainWindow" >
 
 
     <StackPanel>

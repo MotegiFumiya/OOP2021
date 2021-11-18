@@ -26,7 +26,7 @@ namespace NumberGame {
 
         private SolidColorBrush selectedButtonColor = new SolidColorBrush(Colors.Yellow);
         private SolidColorBrush hitButtonColor = new SolidColorBrush(Colors.Red);
-        private object MainForm;
+        //private object MainForm;
 
         public MainWindow() {
             InitializeComponent();
@@ -50,9 +50,9 @@ namespace NumberGame {
             for(int i = 0; i < Rows; i++) {
                 for(int j = 0; j < Columns; j++) {
                     var bt = new Button();
-                    bt.Width = MainForm / Columns;
-                    bt.Height = MainForm.Height / Rows ;
-                    bt.Content = j+1;
+                    bt.Width = MainForm.Width / Columns;
+                    bt.Height = MainForm.Height/ Rows;
+                    bt.Content = (i + 1) + i * Rows;
                     bt.FontSize = 20;
                     bt.Click += Bt_Click;
                     Grid.SetRow(bt, i);
